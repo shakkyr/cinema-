@@ -1,17 +1,17 @@
-import './App.css';
-import React from 'react';
-import { Routes, Route, Link} from 'react-router-dom';
+import React from "react";
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import { Home } from "./components/home/Home";
+import { MovieDetail } from "./components/moviedetail/MovieDetail";
 
-import { Home } from './components/home/Home';
-import { MovieDetail } from './components/movie/MovieDetail';
-
-
-function App() {
+export function App() {
   return (
-    <Routes>
-      <Route exact path="/" component= {Home} exact />
-      <Route path="/movie/:id" component= {MovieDetail} exact />
-    </Routes>
+    <main>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/movie/:id" component={MovieDetail} />
+      </Switch>
+    </main>
   );
 }
 
